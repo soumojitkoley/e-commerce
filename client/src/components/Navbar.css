@@ -1,0 +1,180 @@
+.navbar {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap: 20em;
+  position: fixed;
+  top:0;
+  z-index: 99999;
+  background-color: #fff;
+}
+
+.navbar-h1{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo {
+  height: 6em;
+  width: 10em;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.hello{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  right: 0;
+  z-index: 999;
+}
+
+.fullnav-mob {
+  z-index: -1;
+  position: absolute;
+  top:0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+  padding: 5em 0px;
+  gap:10px;
+  height: 100vh;
+}
+
+
+.list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.list li {
+  padding: 10px;
+  font-size: larger;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(0, 21, 255);
+  transition: all 0.4s ease;
+}
+
+.auth-btns {
+  display: flex;
+  gap: 20px;
+}
+
+.auth-btns button {
+  border: 1px solid rgb(191, 187, 187);
+  border-radius: 15px;
+  padding: 6px 10px;
+  font-size: medium;
+  background-color: #242424;
+}
+
+.burger {
+  position: absolute;
+  top: 1.5em;
+  right: 1em;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: rgb(5, 44, 240);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+  background: rgb(5, 44, 240);
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+  background: rgb(5, 44, 240);
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-h1{
+    position: absolute;
+    left: 0.5em;
+  }
+
+  .logo {
+    position: absolute;
+    top: -9.15em;
+    left: 1em;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 5em;
+  }
+}
