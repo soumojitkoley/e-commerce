@@ -97,8 +97,8 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <NavLink to="/" className="link">
-                Doctors
+              <NavLink to="/cart" className="link">
+                Cart
               </NavLink>
             </li>
             <li>

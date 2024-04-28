@@ -17,14 +17,15 @@ const HeaderSlider = () => {
   const images = [
     'https://rukminim2.flixcart.com/fk-p-flap/1000/170/image/aa1b2bdcf519b468.jpg?q=20',
     'https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/a86d6e688296f007.png?q=20',
-    'https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/119ccdb4164bda39.jpg?q=20'
+    'https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/119ccdb4164bda39.jpg?q=20',
+    'https://media.fashionnetwork.com/m/9bbd/9239/870e/e447/99b3/8373/ab91/11fa/889e/3896/3896.jpeg'
   ];
 
   return (
     <div className="slider-main-div">
-      <div className="slider-title">
+      {/* <div className="slider-title">
         <h1>Explore Our <span className="gold">Wedding Gallery Virtually</span></h1>
-      </div>
+      </div> */}
     <div className="slider-div">
       <Swiper
         slidesPerView={1}

@@ -1,16 +1,23 @@
 import React from 'react'
-import './App.css'
-import HeaderSlider from './components/HeaderSlider'
-
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import Cart from './pages/Cart.jsx'
 import LocomotiveScroll from 'locomotive-scroll';
-import Navbar from './components/Navbar';
 const locomotiveScroll = new LocomotiveScroll();
+import './App.css'
 
 const App = () => {
   return (
     <div>
-      <Navbar/>
-      <HeaderSlider/>
+
+      <Routes className=''>
+        <Route path='/' element={<Outlet />}>
+          <Route index element={<Home />} />
+          {/* <Route path='/doctors' element={<Doctors />} /> */}
+          <Route path='/cart' element={<Cart />} />
+          <Route path='*' element={<div>error</div>} />
+        </Route>
+      </Routes>
     </div>
   )
 }
