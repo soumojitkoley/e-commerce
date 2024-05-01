@@ -45,6 +45,12 @@ export default function ShopContextProvider({ children }) {
     localStorage.setItem('currentProductId', productId);
   }
 
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    setCartCount(items.length)
+  },[cartCount,items])
+
   const value = {
     addItem,
     deleteItem,
@@ -53,7 +59,9 @@ export default function ShopContextProvider({ children }) {
     categorySelector,
     categoryChangeHandler,
     currentProductId,
-    productShowHandler
+    productShowHandler,
+    cartCount,
+    setCartCount
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

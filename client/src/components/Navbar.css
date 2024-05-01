@@ -69,6 +69,14 @@
   text-decoration: none;
   color: rgb(0, 21, 255);
   transition: all 0.4s ease;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -0.6em;
+  right: -0.6em;
+  font-size: 0.8em;
 }
 
 .auth-btns {

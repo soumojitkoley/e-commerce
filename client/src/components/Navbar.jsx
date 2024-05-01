@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LocomotiveScroll from 'locomotive-scroll';
+import { ShopContext } from '../context/ShopContext';
 const locomotiveScroll = new LocomotiveScroll();
 
 const Navbar = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 })
   const [isMenuOpen, setMenuOpen] = useState(false)
+
+  let { cartCount } = useContext(ShopContext)
 
   const handleMenuToggle = () => {
     setMenuOpen(!isMenuOpen)
@@ -84,26 +87,15 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-
             <li>
-              <a className="link">
-                About
-              </a>
-            </li>
-
-            <li>
-              <a className="link">
-                Services
-              </a>
+              <NavLink to="/products/all" className="link">
+                Products
+              </NavLink>
             </li>
             <li>
               <NavLink to="/cart" className="link">
                 Cart
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/" className="link">
-                Hospitals
+                {cartCount != 0 ? (<p className='cart-count'>{cartCount}</p>) : (<></>)}
               </NavLink>
             </li>
             <li>
