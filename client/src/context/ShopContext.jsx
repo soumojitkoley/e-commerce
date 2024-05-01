@@ -29,11 +29,31 @@ export default function ShopContextProvider({ children }) {
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
   }
 
+  const [categorySelector, setCategorySelector] = useState(0)
+
+  function categoryChangeHandler(categoryId) {
+    console.log(categoryId)
+    setCategorySelector(categoryId)
+  }
+
+  const [currentProductId, setCurrentProductId] = useState(() => { 
+    return localStorage.getItem('currentProductId') || 0;
+  });
+
+  function productShowHandler(productId) {
+    setCurrentProductId(productId);
+    localStorage.setItem('currentProductId', productId);
+  }
+
   const value = {
     addItem,
     deleteItem,
     items,
-    setItems
+    setItems,
+    categorySelector,
+    categoryChangeHandler,
+    currentProductId,
+    productShowHandler
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;

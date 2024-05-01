@@ -5,6 +5,7 @@ import Cart from './pages/Cart.jsx'
 import LocomotiveScroll from 'locomotive-scroll';
 const locomotiveScroll = new LocomotiveScroll();
 import './App.css'
+import ShowProduct from './components/ShowProduct.jsx';
 
 const App = () => {
   return (
@@ -13,8 +14,8 @@ const App = () => {
       <Routes className=''>
         <Route path='/' element={<Outlet />}>
           <Route index element={<Home />} />
-          {/* <Route path='/doctors' element={<Doctors />} /> */}
           <Route path='/cart' element={<Cart />} />
+          <Route path='/product' element={<ShowProduct />} />
           <Route path='*' element={<div>error</div>} />
         </Route>
       </Routes>

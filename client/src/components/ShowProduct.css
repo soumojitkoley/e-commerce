@@ -1,0 +1,45 @@
+.show-product-main-div {
+  width: 100%;
+  display: flex;  
+  gap:3em;
+  padding: 0em 2em;
+  margin-top: 6em;
+}
+
+.show-product-image-part {
+  display: flex;
+  gap: 2em;
+}
+
+.side-image {
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+}
+
+.side-each-image {
+  height: 8em;
+  width: 8em;
+}
+
+.side-each-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.show-product-main-image img {
+  height: 26em;
+  width: 26em;
+}
+
+.show-product-name-desc-part {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.show-product-buttons {
+  width: 100%;
+  display: flex;
+  gap:2em;
+}
