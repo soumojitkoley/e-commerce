@@ -46,8 +46,8 @@ const Products = () => {
       <div className='products-part'>
         {
           products.map((eachProduct) => (
-            <Link to='/product'>
-            <div key={eachProduct.id} className='each-products' onClick={() => productShowHandler(eachProduct.id)}>
+            <Link key={eachProduct.id} to={`/product/${eachProduct.id}`}>
+            <div className='each-products' onClick={() => productShowHandler(eachProduct.id)}>
               <div className="products-img">
                 <img src={eachProduct.images[0]} alt="" />
               </div>

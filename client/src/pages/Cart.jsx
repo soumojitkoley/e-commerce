@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import { FaRegArrowAltCircleDown } from 'react-icons/fa';
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 import './Cart.css';
@@ -9,7 +10,7 @@ import './Cart.css';
 const Cart = () => {
   const [cartData, setCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const { items, deleteItem, setItems } = useContext(ShopContext);
+  const { items, deleteItem, setItems, productShowHandler } = useContext(ShopContext);
 
   useEffect(() => {
     async function getCartProducts() {
@@ -61,7 +62,9 @@ const Cart = () => {
             {cartData.map(eachProduct => (
               <div key={eachProduct.id} className='each-cart'>
                 <div className="cart-img">
-                  <img src={eachProduct.images[0]} alt="" />
+                  <Link to={`/product/${eachProduct.id}`}>
+                    <img src={eachProduct.images[0]} alt="" onClick={() => productShowHandler(eachProduct.id)} />
+                  </Link>
                 </div>
                 <p>{eachProduct.title}</p>
                 <div className='each-cart-p-c'>
