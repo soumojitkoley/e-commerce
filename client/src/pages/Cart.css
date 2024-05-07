@@ -9,6 +9,18 @@
   gap:2em;
 }
 
+.cart-0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.cart-0 img {
+  width: 10em;
+}
+
 .cart {
   width: 100%;
   display: flex;
