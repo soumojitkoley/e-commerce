@@ -27,9 +27,8 @@ const Cart = () => {
         console.error('Error fetching categories:', error);
       }
     }
-
     getCartProducts();
-  }, [items]);
+  }, [items.length]);
 
   function increaseHandler(id) {
     const updatedItems = items.map(item =>
