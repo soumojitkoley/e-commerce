@@ -2,9 +2,8 @@ import React, { useContext, useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import { ShopContext } from '../context/ShopContext'
 import { toast } from 'react-toastify'
-import { FadeLoader } from 'react-spinners'
-import './ShowProduct.css'
 import Loader from './Loader'
+import './ShowProduct.css'
 
 const ShowProduct = () => {
 
