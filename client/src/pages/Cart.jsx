@@ -17,7 +17,7 @@ const Cart = () => {
     async function getCartProducts() {
       try {
         setIsLoading(true)
-        let categoryApi = await fetch('https://api.escuelajs.co/api/v1/products');
+        let categoryApi = await fetch('');
         let data = await categoryApi.json();
 
         let filterData = data.filter(eachData => items.some(item => item.id === eachData.id));
